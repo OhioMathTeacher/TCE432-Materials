@@ -24,12 +24,50 @@ Week 08-15/ - Additional weekly materials
 
 **Students:** Click links from Canvas - files will display directly in your browser as PDFs.
 
-**Instructor Workflow:**
-1. Edit markdown files in main TCE432 repository (private)
-2. Convert to PDF: `pandoc file.md -o file.pdf --pdf-engine=xelatex`
-3. Copy PDFs to appropriate week folder in this public repository
-4. Commit and push: `git add -A && git commit -m "..." && git push origin main`
-5. Canvas HTML pages with GitHub raw URLs automatically serve updated content
+## Instructor Workflow
+
+### Creating and Publishing Materials
+
+1. **Edit in private repo**: Create/edit markdown files in main TCE432 repository (private)
+   - Draft, revise, and finalize all content there
+   - Keep all working drafts, notes, and planning materials private
+
+2. **Convert final drafts to PDF**: 
+   ```bash
+   pandoc file.md -o file.pdf --pdf-engine=xelatex
+   ```
+
+3. **Copy ONLY finalized PDFs to public repo**:
+   ```bash
+   cp "file.pdf" "/path/to/TCE432-Materials/Week XX - Name/Materials/"
+   ```
+   - ⚠️ **IMPORTANT**: Only publish student-ready, finalized materials
+   - Do NOT copy drafts, planning docs, or works-in-progress
+   - Public repo = final, polished, student-facing materials only
+
+4. **Commit and push**:
+   ```bash
+   cd "/path/to/TCE432-Materials"
+   git add -A
+   git commit -m "Add/update Week XX materials"
+   git push origin main
+   ```
+
+5. **Canvas links auto-update**: HTML pages with GitHub raw URLs automatically serve updated content
+
+### Updating Existing Materials
+
+When revising materials mid-semester:
+1. Edit markdown in private repo
+2. Convert updated version to PDF
+3. Overwrite the existing PDF in public repo (same filename)
+4. Commit and push - links update automatically
+
+### Key Principles
+
+- **Private repo (TCE432)**: All planning, drafts, notes, markdown sources
+- **Public repo (TCE432-Materials)**: Only final, student-ready PDFs and images
+- **Separation ensures**: Course planning stays private while materials remain accessible
 
 ## GitHub Raw URL Format
 
